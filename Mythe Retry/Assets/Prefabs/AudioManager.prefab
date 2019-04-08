@@ -1,0 +1,147 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8339647606642955960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8339647606642955967}
+  - component: {fileID: 8339647606642955966}
+  - component: {fileID: 8339647606642955961}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8339647606642955967
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339647606642955960}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.3048396, y: 1.4867918, z: -0.70100194}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &8339647606642955966
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339647606642955960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cb0d8c7adf86ed84f90c0d49462a3387, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - name: bgWorld
+    clip: {fileID: 8300000, guid: 999c91d3a341ad64e96a372adedcb661, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  - name: bgCombat
+    clip: {fileID: 8300000, guid: 564bdf31e8fae9440b11516a98eec204, type: 3}
+    volume: 0.6
+    pitch: 1
+    loop: 1
+    source: {fileID: 0}
+  walking:
+  - name: walk0
+    clip: {fileID: 8300000, guid: 4f8ed22a95d606f45815558eb96690cb, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk1
+    clip: {fileID: 8300000, guid: 333ab1f66b967364691d0301c97c62db, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk2
+    clip: {fileID: 8300000, guid: 32e65ee6bc516d94492f1d61a4e0d9c2, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk3
+    clip: {fileID: 8300000, guid: c1246a19c7776294d8adaa70b20d97a9, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk4
+    clip: {fileID: 8300000, guid: 9ad04e2a3b40eef478d7edac35bac16e, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk5
+    clip: {fileID: 8300000, guid: 7c9cb18799b76354399ff4a7fbeef928, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk6
+    clip: {fileID: 8300000, guid: de17a48d81e84384883d250b7ebd6dda, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk7
+    clip: {fileID: 8300000, guid: 9fa9768e200b28f4d8768432d4fd2724, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk8
+    clip: {fileID: 8300000, guid: b234fea663384a748b8070b84639d81c, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: walk9
+    clip: {fileID: 8300000, guid: 3657f34212b57704db06fdb517cc8d40, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  playerHurt:
+  - name: hurt1
+    clip: {fileID: 8300000, guid: 6fddeb6a78e132f44a09f8201a7d78a1, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: hurt2
+    clip: {fileID: 8300000, guid: 380b1076f5dc7f0449817f9e44eaeae7, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - name: hurt3
+    clip: {fileID: 8300000, guid: 69d1f774a00a06b4c85089215a585057, type: 3}
+    volume: 0.5
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+--- !u!81 &8339647606642955961
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8339647606642955960}
+  m_Enabled: 1
