@@ -8,8 +8,8 @@ public abstract class Rune : MonoBehaviour {
     #endregion
 
     #region Private Fields
-    protected float minDamage;
-    protected float maxDamage;
+    public float minDamage;
+    public float maxDamage;
     protected float mass;
     protected float cooldown;
 
@@ -20,7 +20,7 @@ public abstract class Rune : MonoBehaviour {
     #endregion
 
     #region Unity Methods
-    protected virtual void Start() {
+    public virtual void Start() {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody>();
         spriteRenderer.sprite = sprite;

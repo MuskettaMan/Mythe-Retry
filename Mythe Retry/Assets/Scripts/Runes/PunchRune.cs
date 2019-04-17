@@ -10,7 +10,7 @@ public class PunchRune : Rune {
     #endregion
 
     #region Unity Methods
-    protected override void Start() {
+    protected virtual new void Start() {
         base.Start();
 
         minDamage = 8;
@@ -19,7 +19,6 @@ public class PunchRune : Rune {
         cooldown = 2;
 
         rigidbody.mass = mass;
-        
     }
 
     void Update() {

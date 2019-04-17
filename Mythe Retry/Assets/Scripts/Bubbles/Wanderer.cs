@@ -10,6 +10,11 @@ public class Wanderer : MonoBehaviour {
     #region Private Fields
     [SerializeField] private GameObject targetPrefab;
     private Bubble bubble;
+
+    [SerializeField] private float minX;
+    [SerializeField] private float maxX;
+    [SerializeField] private float minY;
+    [SerializeField] private float maxY;
     #endregion
 
     #region Unity Methods
@@ -33,6 +38,14 @@ public class Wanderer : MonoBehaviour {
             bubble.SetTarget(target.GetComponent<Target>());
         }
     }
+
+    private void OnDrawGizmosSelected() {
+        Gizmos.color = Color.red;
+        Gizmos.DrawLine(new Vector3(minX, minY), new Vector3(maxX, minY));
+        Gizmos.DrawLine(new Vector3(maxX, minY), new Vector3(maxX, maxY));
+        Gizmos.DrawLine(new Vector3(maxX, maxY), new Vector3(minX, maxY));
+        Gizmos.DrawLine(new Vector3(minX, maxY), new Vector3(minX, minY));
+    }
     #endregion
 
     #region Public Methods
@@ -46,9 +59,9 @@ public class Wanderer : MonoBehaviour {
     }
 
     private Vector2 GetRandomLocation() {
-        var random = new Vector2(10, 4);
-        random.x = Random.Range(-random.x, random.x);
-        random.y = Random.Range(-random.y, random.y);
+        var random = new Vector2();
+        random.x = Random.Range(minX, maxX);
+        random.y = Random.Range(minY, maxY);
 
         return random;
     }

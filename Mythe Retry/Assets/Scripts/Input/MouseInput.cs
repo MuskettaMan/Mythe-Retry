@@ -7,7 +7,7 @@ public class MouseInput : MonoBehaviour {
     private Target mouseTarget;
 
     private void Start() {
-        mouseTarget = FindObjectOfType<Target>();
+        mouseTarget = GameObject.Find("MouseInput").GetComponent<Target>();
     }
 
     private void Update() {

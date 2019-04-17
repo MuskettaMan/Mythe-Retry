@@ -4,7 +4,7 @@ using UnityEngine;
 using System;
 
 [RequireComponent(typeof(Rigidbody))]
-[RequireComponent(typeof(BoxCollider))]
+[RequireComponent(typeof(SphereCollider))]
 public class Bubble : MonoBehaviour {
 
     private Ray ray;
@@ -14,21 +14,29 @@ public class Bubble : MonoBehaviour {
     }
 
     private Rigidbody rigidbody;
+    private SpriteRenderer spriteRenderer;
     private float _maxSpeed = 20;
 
+    [SerializeField] private Color startColor;
+    [SerializeField] private Color dragColor;
+
     [SerializeField] private Target _currentTarget;
-    [SerializeField] private MouseInput mouseInput;
+   private MouseInput mouseInput;
 
     public event Action Arrived;
     public float _arrivalDistance = 0.5f;
 
     private void Awake() {
         rigidbody = GetComponent<Rigidbody>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     private void Start() {
+        mouseInput = FindObjectOfType<MouseInput>();
         rigidbody.velocity = Vector3.zero;
         rigidbody.drag = 0.9f;
+
+        spriteRenderer.color = startColor;
 
         SetTarget(_currentTarget);
     }
@@ -37,7 +45,7 @@ public class Bubble : MonoBehaviour {
         Movement();
 
         if(mouseInput.GetClickedObject() != null) {
-            if(mouseInput.GetClickedObject().tag == gameObject.tag) {
+            if(mouseInput.GetClickedObject().GetInstanceID() == gameObject.GetInstanceID()) {
                 dragging = true;
                 SetTarget(mouseInput.GetMouseTarget());
             }
@@ -46,6 +54,12 @@ public class Bubble : MonoBehaviour {
         if(mouseInput.LeftMouseButtonReleased()) {
             dragging = false;
             SetTarget(GetComponent<Wanderer>().target.GetComponent<Target>());
+        }
+
+        if(dragging) {
+            spriteRenderer.color = dragColor;
+        } else {
+            spriteRenderer.color = startColor;
         }
     }
 
@@ -73,6 +87,10 @@ public class Bubble : MonoBehaviour {
 
     public void SetTarget(Target target) {
         _currentTarget = target;
+    }
+
+    private void OnDisable() {
+        spriteRenderer.color = startColor;
     }
 
 }
