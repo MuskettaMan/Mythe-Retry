@@ -142,8 +142,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.8962264, g: 0, b: 0, a: 1}
   dragColor: {r: 0.509434, g: 0.012014951, b: 0.012014951, a: 1}
+  interactableColor: {r: 0.6886792, g: 0, b: 0, a: 0.7058824}
   _currentTarget: {fileID: 0}
   _arrivalDistance: 0.5
+  interactable: 1
 --- !u!114 &7790211927898403364
 MonoBehaviour:
   m_ObjectHideFlags: 0

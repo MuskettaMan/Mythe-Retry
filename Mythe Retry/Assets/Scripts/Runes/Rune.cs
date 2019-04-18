@@ -27,7 +27,6 @@ public abstract class Rune : MonoBehaviour {
     }
 
     void Update() {
-
     }
     #endregion
 
@@ -35,5 +34,15 @@ public abstract class Rune : MonoBehaviour {
     #endregion
 
     #region Private Methods
+    public void CoolDown() {
+        StartCoroutine(WaitForCoolDown());
+    }
+
+    IEnumerator WaitForCoolDown() {
+        var bubble = GetComponent<Bubble>();
+        bubble.interactable = false;
+        yield return new WaitForSeconds(cooldown);
+        bubble.interactable = true;
+    }
     #endregion
 }

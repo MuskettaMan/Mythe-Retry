@@ -73,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: e191d328a9cda1640ad39ba404792d3c, type: 3}
   m_Color: {r: 0.8980392, g: 0.62611115, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -81,7 +81,7 @@ SpriteRenderer:
   m_Size: {x: 1, y: 1}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!54 &4979839961045383143
@@ -142,8 +142,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.8980393, g: 0.627451, b: 0, a: 1}
   dragColor: {r: 0.7169812, g: 0.5009476, b: 0, a: 1}
+  interactableColor: {r: 0.7830189, g: 0.5470875, b: 0, a: 0.7058824}
   _currentTarget: {fileID: 0}
   _arrivalDistance: 0.5
+  interactable: 1
 --- !u!114 &4979839961045383139
 MonoBehaviour:
   m_ObjectHideFlags: 0

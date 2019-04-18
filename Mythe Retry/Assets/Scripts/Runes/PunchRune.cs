@@ -22,7 +22,6 @@ public class PunchRune : Rune {
     }
 
     void Update() {
-
     }
     #endregion
 

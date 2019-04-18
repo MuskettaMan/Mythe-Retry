@@ -1402,6 +1402,16 @@ PrefabInstance:
       propertyPath: defaultPunchRune
       value: 
       objectReference: {fileID: 1150315246}
+    - target: {fileID: 4666116753178212154, guid: e26fad4d00c7c0543b5968936974ac49,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
+    - target: {fileID: 4666116753969858162, guid: e26fad4d00c7c0543b5968936974ac49,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0.5019608
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e26fad4d00c7c0543b5968936974ac49, type: 3}
 --- !u!1001 &5543550034239093972
@@ -1595,15 +1605,40 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6093271200442127050, guid: fbc5d967ec6635849bf5a7b514f8a055,
+        type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093271200442127050, guid: fbc5d967ec6635849bf5a7b514f8a055,
+        type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093271200442127050, guid: fbc5d967ec6635849bf5a7b514f8a055,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6093271200677014658, guid: fbc5d967ec6635849bf5a7b514f8a055,
         type: 3}
       propertyPath: m_havePropertiesChanged
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6093271200677014658, guid: fbc5d967ec6635849bf5a7b514f8a055,
         type: 3}
       propertyPath: m_isInputParsingRequired
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6093271200442127051, guid: fbc5d967ec6635849bf5a7b514f8a055,
+        type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 534669904}
+    - target: {fileID: 6093271200442127051, guid: fbc5d967ec6635849bf5a7b514f8a055,
+        type: 3}
+      propertyPath: m_PixelPerfect
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fbc5d967ec6635849bf5a7b514f8a055, type: 3}

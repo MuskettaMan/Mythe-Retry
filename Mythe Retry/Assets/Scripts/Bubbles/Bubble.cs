@@ -19,12 +19,15 @@ public class Bubble : MonoBehaviour {
 
     [SerializeField] private Color startColor;
     [SerializeField] private Color dragColor;
+    [SerializeField] private Color interactableColor;
 
     [SerializeField] private Target _currentTarget;
    private MouseInput mouseInput;
 
     public event Action Arrived;
     public float _arrivalDistance = 0.5f;
+
+    public bool interactable = true;
 
     private void Awake() {
         rigidbody = GetComponent<Rigidbody>();
@@ -45,7 +48,7 @@ public class Bubble : MonoBehaviour {
         Movement();
 
         if(mouseInput.GetClickedObject() != null) {
-            if(mouseInput.GetClickedObject().GetInstanceID() == gameObject.GetInstanceID()) {
+            if(mouseInput.GetClickedObject().GetInstanceID() == gameObject.GetInstanceID() && interactable) {
                 dragging = true;
                 SetTarget(mouseInput.GetMouseTarget());
             }
@@ -58,6 +61,8 @@ public class Bubble : MonoBehaviour {
 
         if(dragging) {
             spriteRenderer.color = dragColor;
+        } else if (!interactable) {
+            spriteRenderer.color = interactableColor;
         } else {
             spriteRenderer.color = startColor;
         }

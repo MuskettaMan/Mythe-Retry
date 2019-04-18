@@ -35,6 +35,8 @@ public class FireAttack : CombinationAttack {
            runes[0].GetType() == this.runes[1].GetType() && runes[1].GetType() == this.runes[0].GetType()) {
             
             player.Attack(Random.Range(minDamage, maxDamage));
+            runes[0].CoolDown();
+            runes[1].CoolDown();
         }
     }
     #endregion
