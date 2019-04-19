@@ -22,7 +22,8 @@ public class Bubble : MonoBehaviour {
     [SerializeField] private Color interactableColor;
 
     [SerializeField] private Target _currentTarget;
-   private MouseInput mouseInput;
+    private MouseInput mouseInput;
+    private bool inputEnabled = true;
 
     public event Action Arrived;
     public float _arrivalDistance = 0.5f;
@@ -42,12 +43,23 @@ public class Bubble : MonoBehaviour {
         spriteRenderer.color = startColor;
 
         SetTarget(_currentTarget);
+
+        SlotMaster.RunesAvailable += OnRunesAvailable;
+        Enemy.Attacking += OnEnemyAttacking;
+    }
+
+    private void OnRunesAvailable(Rune[] runes) {
+        inputEnabled = false;
+    }
+
+    private void OnEnemyAttacking(float damage) {
+        inputEnabled = true;
     }
 
     private void Update() {
         Movement();
 
-        if(mouseInput.GetClickedObject() != null) {
+        if(mouseInput.GetClickedObject() != null && inputEnabled) {
             if(mouseInput.GetClickedObject().GetInstanceID() == gameObject.GetInstanceID() && interactable) {
                 dragging = true;
                 SetTarget(mouseInput.GetMouseTarget());
@@ -59,7 +71,7 @@ public class Bubble : MonoBehaviour {
             SetTarget(GetComponent<Wanderer>().target.GetComponent<Target>());
         }
 
-        if(dragging) {
+        if(dragging && inputEnabled) {
             spriteRenderer.color = dragColor;
         } else if (!interactable) {
             spriteRenderer.color = interactableColor;

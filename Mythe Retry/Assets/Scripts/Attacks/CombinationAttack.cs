@@ -10,7 +10,10 @@ public abstract class CombinationAttack : MonoBehaviour {
     #region Private Fields
     protected float minDamage;
     protected float maxDamage;
+    protected Player player;
+    protected float waitDuration;
     protected new ParticleSystem particleSystem;
+    protected CombatPlayerAnimationHandler animationHandler;
     public Rune[] runes = new Rune[2];
     #endregion
 
@@ -30,6 +33,13 @@ public abstract class CombinationAttack : MonoBehaviour {
     #region Private Methods
     protected float CalculateDamage(float a, float b) {
         return (a + b) / 2;
+    }
+
+    protected IEnumerator WaitForAttack(Rune[] _runes, float waitDuration) {
+        yield return new WaitForSeconds(waitDuration);
+        player.Attack(Random.Range(minDamage, maxDamage));
+        _runes[0].CoolDown();
+        _runes[1].CoolDown();
     }
     #endregion
 }

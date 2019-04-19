@@ -5,6 +5,7 @@ using UnityEngine;
 public class MouseInput : MonoBehaviour {
 
     private Target mouseTarget;
+    private bool inputEnabled;
 
     private void Start() {
         mouseTarget = GameObject.Find("MouseInput").GetComponent<Target>();

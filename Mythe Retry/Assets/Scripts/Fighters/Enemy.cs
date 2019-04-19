@@ -37,13 +37,17 @@ public class Enemy : Fighter {
         currentHealth -= damage;
 
         currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
-
-        Debug.Log("Enemy health is now: " + currentHealth);
+        
         if(currentHealth == 0) {
             Died?.Invoke();
         } else {
-            Attack(10); // Test value for damage
+            StartCoroutine(WaitForAttack());// Test value for damage
         }
+    }
+
+    private IEnumerator WaitForAttack() {
+        yield return new WaitForSeconds(3);
+        Attack(10);
     }
     #endregion
 }
