@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
     #region Public Fields
+    public Enemy encounteredEnemy = null;
     #endregion
 
     #region Private Fields
@@ -11,7 +12,7 @@ public class GameController : MonoBehaviour {
     private Transform runesParent;
     private string runeTag = "Bubble";
     private SlotMaster slotMaster;
-
+    private RuneInventory runeInventory;
     private CombatTimer combatTimer;
     #endregion
 
@@ -23,6 +24,11 @@ public class GameController : MonoBehaviour {
         Player.TookDamage += OnPlayerTookDamage;
         slotMaster = GameObject.Find("Slots").GetComponent<SlotMaster>();
         combatTimer = GameObject.Find("Timer").GetComponent<CombatTimer>();
+        runeInventory = FindObjectOfType<RuneInventory>();
+        Player.Died += OnPlayerDied;
+        Enemy.Died += OnEnemyDied;
+
+        ResetBattle(encounteredEnemy);
     }
 
     void Update() {
@@ -31,6 +37,22 @@ public class GameController : MonoBehaviour {
     #endregion
 
     #region Public Methods
+    public void ResetBattle(Enemy enemy) {
+        encounteredEnemy = enemy;
+        if(encounteredEnemy = null) {
+            EndBattle(false);
+        } else {
+            runeInventory.SpawnRunes();
+        }
+    }
+
+    public void EndBattle(bool won) {
+        runeInventory.DestroyRunes();
+
+        if(won) {
+
+        }
+    }
     #endregion
 
     #region Private Methods
@@ -46,6 +68,14 @@ public class GameController : MonoBehaviour {
         }
 
         combatTimer.ResetTimer();
+    }
+
+    private void OnPlayerDied() {
+        EndBattle(false);
+    }
+
+    private void OnEnemyDied() {
+        EndBattle(true);
     }
     #endregion
 }
