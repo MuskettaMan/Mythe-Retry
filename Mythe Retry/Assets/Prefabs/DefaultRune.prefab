@@ -142,9 +142,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startColor: {r: 0.8962264, g: 0, b: 0, a: 1}
   dragColor: {r: 0.509434, g: 0.012014951, b: 0.012014951, a: 1}
+  interactableColor: {r: 0, g: 0, b: 0, a: 0}
   _currentTarget: {fileID: 0}
-  mouseInput: {fileID: 0}
   _arrivalDistance: 0.5
+  interactable: 1
 --- !u!114 &5543550035389355576
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159,7 +160,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targetPrefab: {fileID: 8357299206076510946, guid: 382d55dbc3fee63499596bd04f7acf80,
     type: 3}
-  minX: -6.8
-  maxX: 9.8
-  minY: 5.27
-  maxY: 1.05
+  minX: -9.81
+  maxX: 9.69
+  minY: 6.31
+  maxY: 0.59

@@ -31,7 +31,6 @@ public class PunchAttack : CombinationAttack {
 
     #region Private Methods
     private void OnRunesAvailable(Rune[] runes) {
-        Debug.Log("Rune available");
         // Slot combination matches that of the attack
         if(runes[0].GetType() == this.runes[0].GetType() && runes[1].GetType() == this.runes[1].GetType() ||
            runes[0].GetType() == this.runes[1].GetType() && runes[1].GetType() == this.runes[0].GetType()) {

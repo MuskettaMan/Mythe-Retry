@@ -27,6 +27,7 @@ public class Slot : MonoBehaviour {
             rune.GetComponent<SphereCollider>().enabled = false;
             rune.transform.rotation = Quaternion.identity;
             rune.transform.position = transform.position;
+            rune.GetComponent<SpriteRenderer>().sortingOrder = rune.overlaySortOrder;
         }
 
 		if (RunePlaced != null)
@@ -39,6 +40,7 @@ public class Slot : MonoBehaviour {
             rune.GetComponent<SphereCollider>().enabled = true;
             rune.GetComponent<Wanderer>().enabled = true;
             rune.GetComponent<Bubble>().enabled = true;
+            rune.GetComponent<SpriteRenderer>().sortingOrder = rune.defaultSortOrder;
             StartCoroutine(WaitForRuneToLeave());
         }
     }

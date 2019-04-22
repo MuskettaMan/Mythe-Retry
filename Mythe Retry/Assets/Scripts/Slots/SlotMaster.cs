@@ -64,8 +64,7 @@ public class SlotMaster : MonoBehaviour {
         }
 
         if(amountSlotsNotFilled == 2) {
-            Debug.Log("All slots empty");
-            //Forfeit();
+            Enemy.Attack(10);
         }
 
         // All slots are filled

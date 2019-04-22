@@ -35,6 +35,8 @@ public class FireAttack : CombinationAttack {
            runes[0].GetType() == this.runes[1].GetType() && runes[1].GetType() == this.runes[0].GetType()) {
 
             waitDuration = animationHandler.GetCurrentStateInfo().length - 1.5f;
+            var particle = Instantiate(particleSystem, transform);
+            Destroy(particle, 2f); // Hard coded duration, cant be fucked
 
             animationHandler.PunchAnimation();
             StartCoroutine(WaitForAttack(runes, waitDuration));

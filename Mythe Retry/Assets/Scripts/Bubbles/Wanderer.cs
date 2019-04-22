@@ -11,10 +11,10 @@ public class Wanderer : MonoBehaviour {
     [SerializeField] private GameObject targetPrefab;
     private Bubble bubble;
 
-    [SerializeField] private float minX;
-    [SerializeField] private float maxX;
-    [SerializeField] private float minY;
-    [SerializeField] private float maxY;
+    private static float minX = -9.81f;
+    private static float maxX = 9.69f;
+    private static float minY = 6.2f;
+    private static float maxY = 0.59f;
     #endregion
 
     #region Unity Methods

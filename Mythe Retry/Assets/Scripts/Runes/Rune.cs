@@ -5,6 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public abstract class Rune : MonoBehaviour {
     #region Public Fields
+    public int defaultSortOrder;
+    public int overlaySortOrder;
     #endregion
 
     #region Private Fields
@@ -24,6 +26,8 @@ public abstract class Rune : MonoBehaviour {
         spriteRenderer = GetComponent<SpriteRenderer>();
         rigidbody = GetComponent<Rigidbody>();
         spriteRenderer.sprite = sprite;
+        defaultSortOrder = spriteRenderer.sortingOrder;
+        overlaySortOrder = 50;
     }
 
     void Update() {

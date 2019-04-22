@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &7361819108772554244
+--- !u!1 &2898269942701472248
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,41 +8,41 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 7361819108772554246}
-  - component: {fileID: 7361819108772554245}
+  - component: {fileID: 2898269942701472250}
+  - component: {fileID: 9074471012291884404}
   m_Layer: 0
-  m_Name: FireAttack
+  m_Name: FireEarthAttack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &7361819108772554246
+--- !u!4 &2898269942701472250
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7361819108772554244}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_GameObject: {fileID: 2898269942701472248}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7361819108772554245
+--- !u!114 &9074471012291884404
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7361819108772554244}
+  m_GameObject: {fileID: 2898269942701472248}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5ed5f8005c8b6943bc83ac6b69197c4, type: 3}
+  m_Script: {fileID: 11500000, guid: c840b4f57e0e09849be9f8cbf85c7ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   runes:
   - {fileID: 4979839961045383144, guid: e9dcd62f85484c34fa7a1063470a6b95, type: 3}
-  - {fileID: 7790211927898403546, guid: 82a7e04b8d0db874897129fe063bf0b4, type: 3}
+  - {fileID: 4378367768709984855, guid: e808ca888bef762488e56b4b13eb1467, type: 3}

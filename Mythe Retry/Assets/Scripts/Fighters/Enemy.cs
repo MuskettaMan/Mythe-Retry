@@ -29,7 +29,7 @@ public class Enemy : Fighter {
     #endregion
 
     #region Private Methods
-    private void Attack(float damage) {
+    public static void Attack(float damage) {
         Attacking?.Invoke(damage);
     }
 

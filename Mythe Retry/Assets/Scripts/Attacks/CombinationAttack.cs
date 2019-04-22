@@ -12,7 +12,7 @@ public abstract class CombinationAttack : MonoBehaviour {
     protected float maxDamage;
     protected Player player;
     protected float waitDuration;
-    protected new ParticleSystem particleSystem;
+    [SerializeField] protected new ParticleSystem particleSystem;
     protected CombatPlayerAnimationHandler animationHandler;
     public Rune[] runes = new Rune[2];
     #endregion

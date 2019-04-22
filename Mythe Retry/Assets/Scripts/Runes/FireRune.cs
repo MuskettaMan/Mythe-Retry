@@ -16,7 +16,7 @@ public class FireRune : Rune {
         minDamage = 10;
         maxDamage = 16;
         mass = 100;
-        cooldown = 5;
+        cooldown = 3;
 
         rigidbody.mass = mass;
     }
