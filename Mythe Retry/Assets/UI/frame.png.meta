@@ -3,7 +3,7 @@ guid: 5f6b6220b9301f640a7b36b03489745f
 TextureImporter:
   fileIDToRecycleName: {}
   externalObjects: {}
-  serializedVersion: 9
+  serializedVersion: 7
   mipmaps:
     mipMapMode: 0
     enableMipMap: 0
@@ -45,7 +45,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 300
   spriteBorder: {x: 373, y: 366, z: 372, w: 362}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
