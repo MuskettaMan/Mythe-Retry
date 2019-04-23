@@ -43,6 +43,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c840b4f57e0e09849be9f8cbf85c7ad0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  particleSystem: {fileID: 4811673788369229089, guid: 012955831dd52d84c92f517dbdb25a5a,
+    type: 3}
   runes:
   - {fileID: 4979839961045383144, guid: e9dcd62f85484c34fa7a1063470a6b95, type: 3}
   - {fileID: 4378367768709984855, guid: e808ca888bef762488e56b4b13eb1467, type: 3}

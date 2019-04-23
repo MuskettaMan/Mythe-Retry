@@ -23,8 +23,6 @@ public class Enemy : Fighter {
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator = GetComponent<Animator>();
 
-        spriteRenderer.sprite = sprite;
-        animator.runtimeAnimatorController = animatorController;
         base.Start();
 
         Player.Attacking += OnGettingAttacked;
@@ -36,6 +34,11 @@ public class Enemy : Fighter {
     #endregion
 
     #region Public Methods
+    public void SetEnemyGraphic(Sprite _sprite, RuntimeAnimatorController _animatorController) {
+
+        spriteRenderer.sprite = _sprite;
+        animator.runtimeAnimatorController = _animatorController;
+    }
     #endregion
 
     #region Private Methods

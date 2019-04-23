@@ -44,6 +44,7 @@ public class GameController : MonoBehaviour {
         if(encounteredEnemy == null) {
             EndBattle(false);
         } else {
+            enemy.SetEnemyGraphic(worldEnemy.sprite, worldEnemy.animatorController);
             enemy.sprite = worldEnemy.sprite;
             enemy.animatorController = worldEnemy.animatorController;
             enemy.SetMaxHealth(worldEnemy.maxHealth);
@@ -57,7 +58,6 @@ public class GameController : MonoBehaviour {
         if(won) {
             cameraSwitcher.SwitchToWorldCamera();
             player.SetCurrentHealth(player.GetMaxHealth());
-            Debug.Log(player.GetMaxHealth());
             Destroy(encounteredEnemy.gameObject);
         }
     }

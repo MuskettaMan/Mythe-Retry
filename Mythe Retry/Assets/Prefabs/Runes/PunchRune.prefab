@@ -129,7 +129,7 @@ MonoBehaviour:
   overlaySortOrder: 0
   minDamage: 8
   maxDamage: 11
-  sprite: {fileID: 21300000, guid: e191d328a9cda1640ad39ba404792d3c, type: 3}
+  sprite: {fileID: 21300000, guid: a4447c3a02733be4bac2e0eb3bd3ccaf, type: 3}
 --- !u!114 &7790211927898403365
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142,9 +142,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec25bcfb894f4b14f86e5af5bad2ee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startColor: {r: 0.8962264, g: 0, b: 0, a: 1}
-  dragColor: {r: 0.3773585, g: 0, b: 0, a: 1}
-  interactableColor: {r: 0.4528302, g: 0, b: 0, a: 0.39215687}
+  startColor: {r: 1, g: 1, b: 1, a: 1}
+  dragColor: {r: 0.6698113, g: 0.6698113, b: 0.6698113, a: 1}
+  interactableColor: {r: 0.4245283, g: 0.4245283, b: 0.4245283, a: 0.39215687}
   _currentTarget: {fileID: 0}
   _arrivalDistance: 0.5
   interactable: 1
