@@ -22,6 +22,7 @@ public class Player : Fighter {
     }
 
     void Update() {
+        //Debug.Log(currentHealth);
     }
     #endregion
 

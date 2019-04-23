@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
     private RuneInventory runeInventory;
     private CombatTimer combatTimer;
     private Enemy enemy;
+    private Player player;
     [SerializeField] private CameraSwitcher cameraSwitcher;
     #endregion
 
@@ -28,13 +29,12 @@ public class GameController : MonoBehaviour {
         combatTimer = GameObject.Find("Timer").GetComponent<CombatTimer>();
         runeInventory = FindObjectOfType<RuneInventory>();
         enemy = FindObjectOfType<Enemy>();
+        player = FindObjectOfType<Player>();
         Player.Died += OnPlayerDied;
         Enemy.Died += OnEnemyDied;
     }
 
     void Update() {
-        if(encounteredEnemy != null)
-            Debug.Log(encounteredEnemy.name);
     }
     #endregion
 
@@ -56,6 +56,8 @@ public class GameController : MonoBehaviour {
         runeInventory.DestroyRunes();
         if(won) {
             cameraSwitcher.SwitchToWorldCamera();
+            player.SetCurrentHealth(player.GetMaxHealth());
+            Debug.Log(player.GetMaxHealth());
             Destroy(encounteredEnemy.gameObject);
         }
     }

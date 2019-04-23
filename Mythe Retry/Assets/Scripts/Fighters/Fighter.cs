@@ -34,6 +34,10 @@ public abstract class Fighter : MonoBehaviour {
     public float GetCurrentHealth() {
         return currentHealth;
     }
+
+    public void SetCurrentHealth(float _currentHealth) {
+        currentHealth = (_currentHealth < maxHealth) ? _currentHealth : maxHealth;
+    }
     #endregion
 
     #region Private Methods
