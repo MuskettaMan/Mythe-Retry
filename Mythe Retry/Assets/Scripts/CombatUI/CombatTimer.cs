@@ -24,8 +24,7 @@ public class CombatTimer : MonoBehaviour {
 	void Start () {
 		// Timers.
 		currentTime = baseTime;
-
-		StartTimer();
+        
         SlotMaster.SlotsFilled += StopTimer;
     }
 	

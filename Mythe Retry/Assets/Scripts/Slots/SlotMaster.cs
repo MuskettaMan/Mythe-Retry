@@ -15,6 +15,8 @@ public class SlotMaster : MonoBehaviour {
 
     public static Action<Rune[]> RunesAvailable;
 
+    private Enemy enemy;
+
 	private void Start() 
     {
 
@@ -23,7 +25,7 @@ public class SlotMaster : MonoBehaviour {
         }
 
         combatTimer.TimerEnded += OnTimerEnded;
-        
+        enemy = FindObjectOfType<Enemy>();
 		
 	}
 
@@ -64,7 +66,7 @@ public class SlotMaster : MonoBehaviour {
         }
 
         if(amountSlotsNotFilled == 2) {
-            Enemy.Attack(10);
+            enemy.OnGettingAttacked(0);
         }
 
         // All slots are filled

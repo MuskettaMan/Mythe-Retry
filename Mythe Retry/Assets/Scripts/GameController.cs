@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameController : MonoBehaviour {
     #region Public Fields
-    public Enemy encounteredEnemy = null;
+    public WorldEnemy encounteredEnemy = null;
     #endregion
 
     #region Private Fields
@@ -14,6 +14,7 @@ public class GameController : MonoBehaviour {
     private SlotMaster slotMaster;
     private RuneInventory runeInventory;
     private CombatTimer combatTimer;
+    private Enemy enemy;
     #endregion
 
     #region Unity Methods
@@ -25,10 +26,10 @@ public class GameController : MonoBehaviour {
         slotMaster = GameObject.Find("Slots").GetComponent<SlotMaster>();
         combatTimer = GameObject.Find("Timer").GetComponent<CombatTimer>();
         runeInventory = FindObjectOfType<RuneInventory>();
+        enemy = FindObjectOfType<Enemy>();
         Player.Died += OnPlayerDied;
         Enemy.Died += OnEnemyDied;
 
-        ResetBattle(encounteredEnemy);
     }
 
     void Update() {
@@ -37,12 +38,16 @@ public class GameController : MonoBehaviour {
     #endregion
 
     #region Public Methods
-    public void ResetBattle(Enemy enemy) {
-        encounteredEnemy = enemy;
+    public void ResetBattle(WorldEnemy worldEnemy) {
+        encounteredEnemy = worldEnemy;
         if(encounteredEnemy = null) {
             EndBattle(false);
         } else {
+            enemy.sprite = worldEnemy.sprite;
+            enemy.animatorController = worldEnemy.animatorController;
+            enemy.SetMaxHealth(worldEnemy.maxHealth);
             runeInventory.SpawnRunes();
+            combatTimer.StartTimer();
         }
     }
 
