@@ -34,7 +34,7 @@ public class CameraController : MonoBehaviour
 
 	private void Start()
 	{
-		target = GameObject.FindGameObjectWithTag("Player").transform;
+		target = GameObject.FindGameObjectWithTag("WorldPlayer").transform;
 
 		// Starts game with main camera.
 		currentCamera = 0;

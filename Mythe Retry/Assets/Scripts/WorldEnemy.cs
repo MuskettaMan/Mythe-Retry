@@ -14,19 +14,12 @@ public class WorldEnemy : MonoBehaviour {
 
     private void Start() {
         gameController = FindObjectOfType<GameController>();
-        StartCoroutine(waitForTestBattle());
     }
 
-    private void OnCollisionEnter(Collision collision) {
-        if(collision.gameObject.tag == "Player") {
-            gameController.ResetBattle(this);
+    private void OnTriggerEnter(Collider other) {
+        if(other.gameObject.tag == "WorldPlayer") {
+            gameController.ResetBattle(gameObject.GetComponent<WorldEnemy>());
         }
-    }
-
-    private IEnumerator waitForTestBattle() {
-        yield return new WaitForSeconds(3);
-
-        gameController.ResetBattle(this);
     }
 
 }

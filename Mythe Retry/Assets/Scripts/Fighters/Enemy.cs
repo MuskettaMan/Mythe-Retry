@@ -55,6 +55,11 @@ public class Enemy : Fighter {
         }
     }
 
+    public virtual void SetMaxHealth(float health) {
+        base.SetMaxHealth(health);
+        currentHealth = maxHealth;
+    }
+
     private IEnumerator WaitForAttack() {
         animator.SetTrigger("Punch");
         yield return new WaitForSeconds(3);

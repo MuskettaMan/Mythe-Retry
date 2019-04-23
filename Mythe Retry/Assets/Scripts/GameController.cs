@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour {
     private RuneInventory runeInventory;
     private CombatTimer combatTimer;
     private Enemy enemy;
+    [SerializeField] private CameraSwitcher cameraSwitcher;
     #endregion
 
     #region Unity Methods
@@ -29,33 +30,33 @@ public class GameController : MonoBehaviour {
         enemy = FindObjectOfType<Enemy>();
         Player.Died += OnPlayerDied;
         Enemy.Died += OnEnemyDied;
-
     }
 
     void Update() {
-
+        if(encounteredEnemy != null)
+            Debug.Log(encounteredEnemy.name);
     }
     #endregion
 
     #region Public Methods
     public void ResetBattle(WorldEnemy worldEnemy) {
         encounteredEnemy = worldEnemy;
-        if(encounteredEnemy = null) {
+        if(encounteredEnemy == null) {
             EndBattle(false);
         } else {
             enemy.sprite = worldEnemy.sprite;
             enemy.animatorController = worldEnemy.animatorController;
             enemy.SetMaxHealth(worldEnemy.maxHealth);
             runeInventory.SpawnRunes();
-            combatTimer.StartTimer();
+            combatTimer.ResetTimer();
         }
     }
 
     public void EndBattle(bool won) {
         runeInventory.DestroyRunes();
-
         if(won) {
-
+            cameraSwitcher.SwitchToWorldCamera();
+            Destroy(encounteredEnemy.gameObject);
         }
     }
     #endregion

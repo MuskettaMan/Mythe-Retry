@@ -13,8 +13,8 @@ public class Wanderer : MonoBehaviour {
 
     private static float minX = -9.81f;
     private static float maxX = 9.69f;
-    private static float minY = 6.2f;
-    private static float maxY = 0.59f;
+    private static float minY = 68.5f;
+    private static float maxY = 62.89f;
     #endregion
 
     #region Unity Methods
