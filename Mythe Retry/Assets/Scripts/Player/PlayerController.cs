@@ -23,30 +23,17 @@ public class PlayerController : MonoBehaviour
 	public GameObject target;
 	public Action Interacting;
 
-	// Data.
-	//private DataManager _dataManager;
-
 	void Start() // Assign starting values.
 	{
 		// Components.
 		rb = GetComponent<Rigidbody>();
 		ac = FindObjectOfType<AudioController>();
-		//_dataManager = FindObjectOfType<DataManager>();
-
-		// Stats.
-		//var player = _dataManager.GetData<PlayerStats>("player");
-
-        //transform.position = new Vector3(player.pos.x, player.pos.y, player.pos.z);
+	
     }
 
 	void Update()
 	{
 		PlayerMovement();
-
-		if (Input.GetKeyDown(KeyCode.E))
-		{
-			if (PickupInteraction.canInteract) Interact(target);
-		}
 	}
 
 	private void PlayerMovement() // Handles movement controls.
@@ -74,24 +61,4 @@ public class PlayerController : MonoBehaviour
 		moveSpeed = !diagonal ? 5f : 3.5f;
 	}
 
-	private void Interact(GameObject target)
-	{
-		// MORE ACTIONS HERE.
-		// MORE ACTIONS HERE.
-		// MORE ACTIONS HERE.
-		if (Interacting != null) Interacting();
-		PickupInteraction.isInteracting = true;
-		//Destroy(target);
-	}
-
-    private void OnDisable()
-    {
-        //var _player = _dataManager.GetData<PlayerStats>("player");
-
-        //_player.pos.x = transform.position.x;
-        //_player.pos.y = transform.position.y;
-        //_player.pos.z = transform.position.z;
-
-        //_dataManager.SaveAll();
-    }
 }
