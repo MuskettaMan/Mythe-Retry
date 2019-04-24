@@ -48,6 +48,7 @@ public class GameController : MonoBehaviour {
             enemy.sprite = worldEnemy.sprite;
             enemy.animatorController = worldEnemy.animatorController;
             enemy.SetMaxHealth(worldEnemy.maxHealth);
+            enemy.damage = worldEnemy.damage;
             runeInventory.SpawnRunes();
             combatTimer.ResetTimer();
         }

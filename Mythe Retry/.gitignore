@@ -5,6 +5,7 @@
 /[Oo]bj/
 /[Bb]uild/
 /[Bb]uilds/
+/[Ww]eb[Bb]uild/
 /[Ll]ogs/
 
 # Never ignore Asset meta data

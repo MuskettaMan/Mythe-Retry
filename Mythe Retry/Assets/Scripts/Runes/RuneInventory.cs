@@ -25,8 +25,9 @@ public class RuneInventory : MonoBehaviour {
     public void SpawnRunes() {
         // Instantiate all the runes in the inventory in the Runes parent
         for(int i = 0; i < runeInventory.Count; i++) {
-            spawnedRunes.Add(Instantiate(runeInventory[i], GameObject.Find("Runes").transform));
-
+            var clone = Instantiate(runeInventory[i], GameObject.Find("Runes").transform);
+            clone.transform.position += new Vector3(-4 + i, 0, 0);
+            spawnedRunes.Add(clone);
         }
     }
 

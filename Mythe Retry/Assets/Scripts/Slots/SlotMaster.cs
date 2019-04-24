@@ -62,7 +62,7 @@ public class SlotMaster : MonoBehaviour {
 
         // One Slot empty
         if(indexSlotNotFilled != -1 && amountSlotsNotFilled == 1) {
-            slots[indexSlotNotFilled].InsertRune(defaultPunchRune); // Fill the empty slot with the default rune
+            enemy.OnGettingAttacked(0);
         }
 
         if(amountSlotsNotFilled == 2) {

@@ -19,7 +19,7 @@ public class Threshold : MonoBehaviour {
 	}
 
 	private void OnTriggerEnter(Collider other)	{
-		if (other.tag == "Player") {
+		if (other.tag == "WorldPlayer") {
 			// If action has listeners.
 			if (ThresholdEntered != null) {
 				// Yell ThresholdEntered with this gameobject attached.

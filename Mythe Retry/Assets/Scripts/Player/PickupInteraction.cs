@@ -38,7 +38,7 @@ public class PickupInteraction : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.tag == "WorldPlayer")
 		{
 			interactGO[0].SetActive(true);
 			canInteract = true;
@@ -48,7 +48,7 @@ public class PickupInteraction : MonoBehaviour
 
 	private void OnTriggerExit(Collider other)
 	{
-		if (other.tag == "Player")
+		if (other.tag == "WorldPlayer")
 		{
 			for (int i = 0; i < interactGO.Length; i++) interactGO[i].SetActive(false);
 			canInteract = false;

@@ -1991,11 +1991,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   runeInventory:
-  - {fileID: 4979839961045383146, guid: e9dcd62f85484c34fa7a1063470a6b95, type: 3}
-  - {fileID: 4979839961045383146, guid: 5a9ba808d8556874d92be5d21fef127b, type: 3}
   - {fileID: 7790211927898403367, guid: 82a7e04b8d0db874897129fe063bf0b4, type: 3}
-  - {fileID: 4979839961045383146, guid: e808ca888bef762488e56b4b13eb1467, type: 3}
-  - {fileID: 5543550035389355583, guid: 39aa98840e18029469d5245c89eb5e01, type: 3}
+  - {fileID: 7790211927898403367, guid: 82a7e04b8d0db874897129fe063bf0b4, type: 3}
   spawnedRunes: []
 --- !u!1 &6876392766970169214
 GameObject:

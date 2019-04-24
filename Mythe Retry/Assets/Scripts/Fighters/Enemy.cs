@@ -66,7 +66,7 @@ public class Enemy : Fighter {
     private IEnumerator WaitForAttack() {
         animator.SetTrigger("Punch");
         yield return new WaitForSeconds(3);
-        Attack(10);
+        Attack(damage);
     }
     #endregion
 }
